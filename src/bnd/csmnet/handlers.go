@@ -5,11 +5,12 @@ import (
 	"html/template"
 	"net/http"
 	"path/filepath"
+	"os"
 )
 
-var indexPath, _ = filepath.Abs("./src/fnd/tmpl/index.html")
+var IndexPath, _ = filepath.Abs(os.Getenv("GOPATH")+"/src/fnd/tmpl/index.html")
 
-var tmpl = template.Must(template.ParseFiles(indexPath))
+var tmpl = template.Must(template.ParseFiles(IndexPath))
 
 // IndexHandler handles index page
 func IndexHandler(w http.ResponseWriter, req *http.Request) {
@@ -18,7 +19,8 @@ func IndexHandler(w http.ResponseWriter, req *http.Request) {
 
 // FindHandler handles "find" POST request
 func FindHandler(w http.ResponseWriter, req *http.Request) {
-	if req.Method == "POST" {
+	switch req.Method {
+	case http.MethodPost:
 		req.ParseForm()
 
 		fmt.Println()
