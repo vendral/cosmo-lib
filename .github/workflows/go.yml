@@ -10,7 +10,7 @@ on:
 defaults:
   run:
     shell: bash
-    working-directory: scripts
+    working-directory: src/scripts
 
 jobs:
 
@@ -28,7 +28,7 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Build
-      run: echo $PWD && ./build.sh
+      run: ./build.sh && echo $PWD
 
     - name: Test
-      run: echo $PWD && ./test.sh
+      run: ./test.sh && echo $PWD
