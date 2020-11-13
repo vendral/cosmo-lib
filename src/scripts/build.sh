@@ -1,4 +1,4 @@
 #!/bin/bash
 
-cd $GOPATH/src/bnd
+cd ../bnd
 go build -v

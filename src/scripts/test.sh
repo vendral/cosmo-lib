@@ -1,4 +1,4 @@
 #!/bin/bash
 
-cd $GOPATH/src/bnd/tests
+cd ../tests
 go test -v
