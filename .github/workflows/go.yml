@@ -1,4 +1,4 @@
-name: [Cosmo-lib] CI
+name: CosmoLib CI
 
 on:
   push:
@@ -22,12 +22,12 @@ jobs:
     - name: Check out code into the Go module directory
       uses: actions/checkout@v2
 
-    - name: [Cosmo-lib] Build
+    - name: Build
       run:
         cd src/bnd/
         go build -v .
 
-    - name: [Cosmo-lib] Test
+    - name: Test
       run:
         cd src/bnd/tests/
         go test -v .
