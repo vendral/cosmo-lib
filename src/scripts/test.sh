@@ -1,4 +1,4 @@
 #!/bin/bash
 
-cd ../tests
+cd ../bnd/tests
 go test -v
