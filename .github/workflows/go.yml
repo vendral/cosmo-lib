@@ -7,6 +7,11 @@ on:
     branches: [ master ]
   workflow_dispatch:
 
+defaults:
+  run:
+    shell: bash
+    working-directory: scripts
+
 jobs:
 
   build:
@@ -23,11 +28,7 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Build
-      run:
-        cd src/bnd/
-        go build -v .
+      run: ./build.sh
 
     - name: Test
-      run:
-        cd src/bnd/tests/
-        go test -v .
+      run: ./test.sh
