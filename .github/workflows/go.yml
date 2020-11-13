@@ -28,7 +28,7 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Build
-      run: ./build.sh
+      run: echo $PWD && ./build.sh
 
     - name: Test
-      run: ./test.sh
+      run: echo $PWD && ./test.sh
