@@ -11,8 +11,6 @@ type server struct {
 	Mux              *http.ServeMux
 }
 
-var ()
-
 func serverInit() server {
 
 	var srv server
@@ -36,8 +34,8 @@ func ServerStart() {
 
 	var srv = serverInit()
 
-	fmt.Println("[CosmoBackendInfo]: Server started and listening on port:", srv.ServerPort)
-	fmt.Printf("[CosmoBackendInfo]: http://localhost%s/testpage", srv.StringServerPort)
+	Info.Println("Server started and listening on port:", srv.ServerPort)
+	Info.Printf("http://localhost%s/testpage", srv.StringServerPort)
 
 	http.ListenAndServe(srv.StringServerPort, srv.Mux)
 }

@@ -1,7 +1,6 @@
 package csmnet
 
 import (
-	"fmt"
 	"html/template"
 	"net/http"
 	"path/filepath"
@@ -24,9 +23,8 @@ func FindHandler(w http.ResponseWriter, req *http.Request) {
 	case http.MethodPost:
 		req.ParseForm()
 
-		fmt.Println()
-		fmt.Println("[CosmoBackendInfo]: /find request is executed")
-		fmt.Printf("[CosmoBackendInfo]: /find request params: author: %s, title: %s", req.Form["author"], req.Form["title"])
+		Info.Println("/find request is executed")
+		Info.Printf("/find request params: author: %s, title: %s", req.Form["author"], req.Form["title"])
 
 		// Go back to TestPage
 		TestPageHandler(w, req)
