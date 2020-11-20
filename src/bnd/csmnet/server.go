@@ -36,8 +36,8 @@ func ServerStart() {
 
 	var srv = serverInit()
 
-	fmt.Println("Cosmo-lib is listening on port:", srv.ServerPort)
-	fmt.Printf("Go to Cosmo-lib: http://localhost%s/testpage", srv.StringServerPort)
+	fmt.Println("[CosmoBackendInfo]: Server started and listening on port:", srv.ServerPort)
+	fmt.Printf("[CosmoBackendInfo]: http://localhost%s/testpage", srv.StringServerPort)
 
 	http.ListenAndServe(srv.StringServerPort, srv.Mux)
 }

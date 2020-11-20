@@ -25,7 +25,10 @@ func FindHandler(w http.ResponseWriter, req *http.Request) {
 		req.ParseForm()
 
 		fmt.Println()
-		fmt.Println("Cosmo-lib is trying to find a book!")
-		fmt.Printf("Author: %s, Title: %s", req.Form["author"], req.Form["title"])
+		fmt.Println("[CosmoBackendInfo]: /find request is executed")
+		fmt.Printf("[CosmoBackendInfo]: /find request params: author: %s, title: %s", req.Form["author"], req.Form["title"])
+
+		// Go back to TestPage
+		TestPageHandler(w, req)
 	}
 }
