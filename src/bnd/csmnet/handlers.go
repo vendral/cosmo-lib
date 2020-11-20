@@ -8,12 +8,13 @@ import (
 	"os"
 )
 
-var IndexPath, _ = filepath.Abs(os.Getenv("GOPATH")+"/src/fnd/tmpl/index.html")
+var TestPagePath, _ = filepath.Abs(os.Getenv("GOPATH")+"/src/fnd/tmpl/testpage.html")
 
-var tmpl = template.Must(template.ParseFiles(IndexPath))
 
-// IndexHandler handles index page
-func IndexHandler(w http.ResponseWriter, req *http.Request) {
+// TestPageHandler handles main test page
+func TestPageHandler(w http.ResponseWriter, req *http.Request) {
+	var tmpl = template.Must(template.ParseFiles(TestPagePath))
+
 	tmpl.Execute(w, nil)
 }
 

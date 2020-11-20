@@ -11,16 +11,16 @@ import (
 
 func TestIndex(t *testing.T) {
 
-    tmpl := template.Must(template.ParseFiles(csmnet.IndexPath))
+    tmpl := template.Must(template.ParseFiles(csmnet.TestPagePath))
 
     var stringTemplate bytes.Buffer
     tmpl.Execute(&stringTemplate, nil)
 
-    t.Run("Test index page", func(t *testing.T) {
-        request, _ := http.NewRequest(http.MethodGet, "/index", nil)
+    t.Run("Testpage page", func(t *testing.T) {
+        request, _ := http.NewRequest(http.MethodGet, "/testpage", nil)
         response := httptest.NewRecorder()
 
-		csmnet.IndexHandler(response, request)
+		csmnet.TestPageHandler(response, request)
 
         got := response.Body.String()
         want := stringTemplate.String()

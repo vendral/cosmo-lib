@@ -25,7 +25,7 @@ func serverInit() server {
 	fs := http.FileServer(http.Dir("assets"))
 	srv.Mux.Handle("/assets/", http.StripPrefix("/assets/", fs))
 
-	srv.Mux.HandleFunc("/", IndexHandler)
+	srv.Mux.HandleFunc("/testpage", TestPageHandler)
 	srv.Mux.HandleFunc("/find", FindHandler)
 
 	return srv
@@ -37,7 +37,7 @@ func ServerStart() {
 	var srv = serverInit()
 
 	fmt.Println("Cosmo-lib is listening on port:", srv.ServerPort)
-	fmt.Printf("Go to Cosmo-lib: http://localhost%s", srv.StringServerPort)
+	fmt.Printf("Go to Cosmo-lib: http://localhost%s/testpage", srv.StringServerPort)
 
 	http.ListenAndServe(srv.StringServerPort, srv.Mux)
 }
