@@ -1,0 +1,5 @@
+package csmdb
+
+func MongoConnect() {
+
+}
