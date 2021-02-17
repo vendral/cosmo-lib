@@ -1,4 +1,4 @@
 #!/bin/bash
 
-cd ../bnd
+cd ../backend
 go build -v

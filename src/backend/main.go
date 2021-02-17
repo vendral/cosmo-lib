@@ -1,7 +1,7 @@
 package main
 
 import (
-	"bnd/csmnet"
+	"backend/csmnet"
 )
 
 func main() {

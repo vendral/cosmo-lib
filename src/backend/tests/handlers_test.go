@@ -6,7 +6,7 @@ import (
     "net/http/httptest"
     "html/template"
     "bytes"
-	"bnd/csmnet"
+	"backend/csmnet"
 )
 
 func TestIndex(t *testing.T) {

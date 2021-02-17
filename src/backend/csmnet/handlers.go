@@ -7,7 +7,7 @@ import (
 	"os"
 )
 
-var TestPagePath, _ = filepath.Abs(os.Getenv("GOPATH")+"/src/fnd/tmpl/testpage.html")
+var TestPagePath, _ = filepath.Abs(os.Getenv("GOPATH")+"/src/web/template/testpage.html")
 
 
 // TestPageHandler handles main test page
