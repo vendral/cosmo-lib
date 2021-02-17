@@ -1,4 +1,4 @@
 #!/bin/bash
 
-cd ../backend
+cd ../cosmolib
 go build -v

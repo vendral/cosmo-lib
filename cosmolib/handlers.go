@@ -1,14 +1,15 @@
-package csmnet
+package main
 
 import (
 	"html/template"
 	"net/http"
-	"path/filepath"
 	"os"
+	"path/filepath"
+	"strings"
 )
 
-var TestPagePath, _ = filepath.Abs(os.Getenv("GOPATH")+"/src/web/template/testpage.html")
-
+// TestPagePath used for testpage location
+var TestPagePath, _ = filepath.Abs(strings.TrimSuffix(os.Getenv("GOMOD"), "go.mod") + "web/template/testpage.html")
 
 // TestPageHandler handles main test page
 func TestPageHandler(w http.ResponseWriter, req *http.Request) {

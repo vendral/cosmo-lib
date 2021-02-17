@@ -1,5 +1,0 @@
-package csmdb
-
-func MongoConnect() {
-
-}

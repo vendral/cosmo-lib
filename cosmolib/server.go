@@ -1,4 +1,4 @@
-package csmnet
+package main
 
 import (
 	"fmt"
